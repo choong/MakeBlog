@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="en">
 
 <head>
@@ -182,14 +181,14 @@
 									<h3>Post Entry Title</h3>
 									<div class="row">
 										<div class="col-xs-9">
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing
+											<p>
+											<a href="#"><font color="#FFFFFF">Lorem ipsum dolor sit amet, consectetur adipiscing
 												elit. Duis pharetra varius quam sit amet vulputate. Quisque
 												mauris augue, molestie tincidunt condimentum vitae, gravida
 												a libero. Aenean sit amet felis dolor, in sagittis nisi. Sed
 												ac orci quis tortor imperdiet venenatis. Duis elementum
-												auctor accumsan. Aliquam in felis sit amet augue.</p>
-											<p class="lead">
-												<button class="btn btn-default">Read More</button>
+												auctor accumsan. Aliquam in felis sit amet augue.
+												</i></font></a>
 											</p>
 											<p class="pull-right">
 												<a href="#"><i class="fa fa-tag">keyword</i></a> 
@@ -197,7 +196,7 @@
 												<a href="#"><i class="fa fa-tag">post</i></a>
 											</p>
 											<ul class="list-inline">
-												<li><a href="#">2 Days Ago</a></li>
+												<li>2 Days Ago</li>
 												<li><a href="#"><i class="fa fa-comments-o fa-2x"></i> 4 Comments</a></li>
 												<li><a href="#"><i class="fa fa-share fa-2x"></i> 34 Shares</a></li>
 											</ul>
