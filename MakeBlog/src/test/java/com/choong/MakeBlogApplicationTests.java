@@ -1,5 +1,7 @@
 package com.choong;
 
+import java.net.URI;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,14 +14,15 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.testng.Assert;
 
-import com.choong.controller.main.MakeBlogApplication;
+import com.choong.main.controller.MakeBlogApplication;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = MakeBlogApplication.class)
 @WebAppConfiguration
 public class MakeBlogApplicationTests extends AbstractTestNGSpringContextTests  {
-
+	
+	
 	@Test
 	public void contextLoads() {
 	}
@@ -28,12 +31,16 @@ public class MakeBlogApplicationTests extends AbstractTestNGSpringContextTests  
 	@Value("${local.server.port}")
 	private int port;
 
+	@Value("${local.server.url}")
+	private String url;
+	
 	@Test
 	public void testHome() throws Exception {
 		ResponseEntity<String> entity = new TestRestTemplate()
-				.getForEntity("http://localhost:" + this.port, String.class);
+				.getForEntity(this.url + ":" + this.port, String.class);
 	
 		Assert.assertEquals(HttpStatus.OK, entity.getStatusCode());
 		
 	}
+	
 }

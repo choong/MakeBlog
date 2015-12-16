@@ -8,7 +8,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.testng.Assert;
 
 import com.choong.common.util.DefaultProperties;
-import com.choong.controller.main.MakeBlogApplication;
+import com.choong.main.controller.MakeBlogApplication;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(MakeBlogApplication.class)

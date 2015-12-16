@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.thymeleaf.org" layout:decorator="layout/default">
+<head>
+</head>
+<body>
+<section layout:fragment="content">	
+	<!-- Portfolio Grid Section -->
+	<section id="portfolio" th:replace="main/main_photo :: main_photo"></section>
+	<section class="content-2 simple col-5" id="post" style="background-color: rgb(255, 255, 255);" th:replace="main/main_post :: main_post"></section>
+	<!-- About Section -->
+	<section  id="about" th:replace="main/main_about :: main_about"></section>
+	<section id="login" th:replace="main/main_login :: main_login"></section>
+
+	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+	<div class="scroll-top page-scroll visible-xs visible-sm">
+		<a class="btn btn-primary" href="#page-top"> <i class="fa fa-chevron-up"></i>
+		</a>
+	</div>
+</section>
+</body>
+
+</html>

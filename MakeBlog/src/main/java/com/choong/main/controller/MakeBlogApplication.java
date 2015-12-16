@@ -1,4 +1,4 @@
-package com.choong.controller.main;
+package com.choong.main.controller;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
