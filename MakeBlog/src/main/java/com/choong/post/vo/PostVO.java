@@ -1,10 +1,13 @@
 package com.choong.post.vo;
 
+import org.apache.ibatis.type.Alias;
+
 import com.choong.common.vo.BaseVO;
 
+@Alias("postvo")
 public class PostVO extends BaseVO {
 
-	private int id;
+	private long id;
 	
 	private String contents;
 	
@@ -17,11 +20,11 @@ public class PostVO extends BaseVO {
 	
 	private int readCount;
 	
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

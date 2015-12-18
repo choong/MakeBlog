@@ -2,7 +2,7 @@ package com.choong.common.util;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties(prefix = MasterDatabaseProperties.PREFIX)
+@ConfigurationProperties( prefix = MasterDatabaseProperties.PREFIX)
 public class MasterDatabaseProperties implements DatabaseProperties {
 	
 	public static final String PREFIX = "datasource.master"; 

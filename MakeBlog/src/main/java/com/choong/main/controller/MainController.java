@@ -9,31 +9,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.choong.common.util.DefaultProperties;
 import com.choong.common.vo.InitializeVO;
-import com.choong.post.dao.UserMapper;
 
 @Controller
 public class MainController {
 	
-	@Autowired
-	private UserMapper userMapper;
-	@Autowired
-	private DefaultProperties defaultProperties;
 	
     @RequestMapping("/")
     public String home(Model model) {
-    	int cnt = userMapper.selectByUserName();
-    	InitializeVO initVO = init();
-    	model.addAttribute("init", initVO);
         return "welcome";
     }
 
-    private InitializeVO init(){
-    	InitializeVO initVO = new InitializeVO();
-    	initVO.setTitle(defaultProperties.getWebSiteTitle());
-    	
-    	return initVO;
-    	
-    }
+    
     
     
 }

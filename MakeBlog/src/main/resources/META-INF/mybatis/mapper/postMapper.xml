@@ -2,8 +2,31 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.choong.post.dao.UserMapper">
-    <select id="selectByUserName" resultType="java.lang.Integer">
-        select count(1) from test
+<mapper namespace="com.choong.mapper.post.dao.PostMapper">
+    
+    <insert id="insertPostContent" parameterType="postvo" useGeneratedKeys="true">
+		    	   
+        INSERT INTO POST (CONTENTS, CREATE_DT, CREATE_NO, UPDATE_DT, UPDATE_NO) 
+        	VALUES(#{contents}, now(), #{memberNo}, now(), #{memberNo});
+		<selectKey resultType="long" keyProperty="id" order="AFTER">
+        	SELECT LAST_INSERT_ID()        
+    	</selectKey>        	
+    </insert>
+    
+    <select id="selectPostContent" resultType="postvo" parameterType="long">
+    	SELECT ID, CONTENTS, CREATE_DT, CREATE_NO, UPDATE_DT, UPDATE_NO
+		FROM POST
+		WHERE ID = #{id} 
     </select>
+    
+    <update id="updatePostContent" parameterType="postvo">
+    	UPDATE POST 
+		SET CONTENTS = #{contents},
+			UPDATE_DT = now(),
+		    UPDATE_NO = #{memberNo}
+		WHERE ID = #{id}    
+    </update>
+    <delete id="deletePostContent" parameterType="long">
+    	DELETE FROM POST WHERE ID = #{id}
+    </delete>
 </mapper>

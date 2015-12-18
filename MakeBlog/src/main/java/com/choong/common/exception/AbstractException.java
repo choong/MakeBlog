@@ -30,6 +30,10 @@ public abstract class AbstractException extends Exception {
 		this(errCodable.getErrorCode(), errCodable.getMessage(args));
 	}
 
+	protected AbstractException(ErrCodable errCodable) {
+		this(errCodable.getErrorCode());
+	}
+	
 	public String getCode() {
 		return code;
 	}

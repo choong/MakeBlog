@@ -41,7 +41,7 @@ public abstract class DatabaseConfig {
 
 @Configuration
 @EnableTransactionManagement
-@MapperScan(basePackages = {"com.choong."}, sqlSessionFactoryRef = "masterSqlSessionFactory")
+@MapperScan(basePackages = {"com.choong.mapper"}, sqlSessionFactoryRef = "masterSqlSessionFactory")
 class DefaultDatabaseConfig extends DatabaseConfig {
 	
 	@Autowired
@@ -58,6 +58,7 @@ class DefaultDatabaseConfig extends DatabaseConfig {
     public PlatformTransactionManager transactionManager() {
 		DataSourceTransactionManager transactionManager = new DataSourceTransactionManager(dataSource());
 		transactionManager.setGlobalRollbackOnParticipationFailure(false);
+		
 		return transactionManager;
     }
 	
@@ -65,7 +66,7 @@ class DefaultDatabaseConfig extends DatabaseConfig {
 	public SqlSessionFactory masterSqlSessionFactory() throws Exception {
 		SqlSessionFactoryBean sessionFactoryBean = new SqlSessionFactoryBean();
 		sessionFactoryBean.setDataSource(dataSource());
-		sessionFactoryBean.setTypeAliasesPackage("com.chooong");
+		sessionFactoryBean.setTypeAliasesPackage("com.chooong.mapper");
 		sessionFactoryBean.setConfigLocation(applicationContext.getResource("classpath:META-INF/mybatis/mybatis-config.xml"));
 		sessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath:META-INF/mybatis/mapper/**/*.xml"));
 		return sessionFactoryBean.getObject();
