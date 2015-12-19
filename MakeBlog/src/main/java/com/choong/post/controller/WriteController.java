@@ -11,14 +11,13 @@ import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.choong.common.exception.CommonException;
-import com.choong.common.util.DefaultProperties;
-import com.choong.common.vo.InitializeVO;
 import com.choong.common.vo.ResponseResultVO;
 import com.choong.post.service.PostService;
-import com.choong.post.service.PostServiceImpl;
 import com.choong.post.vo.PostVO;
 
 @Controller
@@ -26,9 +25,6 @@ import com.choong.post.vo.PostVO;
 public class WriteController {
 	
 	private Log log = LogFactory.getLog(WriteController.class);
-	
-	@Autowired
-	private DefaultProperties defaultProperties;
 	
 	@Autowired
 	private PostService postService;
@@ -71,6 +67,11 @@ public class WriteController {
 	
 	@RequestMapping(value="/save/{id}", method=RequestMethod.PUT)
 	public void saveContents(@PathVariable("id") int id){
+		
+	}
+	
+	@RequestMapping(value="/save/image", method=RequestMethod.POST)
+	public void saveImage(@RequestParam("file") MultipartFile file){
 		
 	}
 	
