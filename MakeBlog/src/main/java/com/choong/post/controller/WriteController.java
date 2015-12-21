@@ -32,7 +32,7 @@ public class WriteController {
 	@RequestMapping("/view")
 	public String viewWrite(Model model){
 		
-		return "post/write";
+		return "post/writePost";
 	}
 	
 	

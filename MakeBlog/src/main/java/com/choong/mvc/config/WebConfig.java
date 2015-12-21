@@ -33,6 +33,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	public void addInterceptors(InterceptorRegistry registry) {
 		List<String> patterns = new ArrayList<String>();
 		patterns.add("/*");
+		patterns.add("/image/*");
 		patterns.add("/write/view");
 		patterns.add("/write/save/*");
 		registry.addInterceptor(initInterceptor()).addPathPatterns(patterns.toArray(new String[0]));
